@@ -8,7 +8,7 @@ from sensor_msgs.msg import Image
 class ViewerNode(Node):
     def __init__(self):
         super().__init__('viewer_node')
-        self.subscription_ = self.create_subscription(Image, '/camera/rgb', self.listener_callback, 10)
+        self.subscription_ = self.create_subscription(Image, '/camera/detections', self.listener_callback, 10)
         self.bridge = CvBridge()
         self.prev_time = time.time()
         self.get_logger().info('Viewer Node Started')

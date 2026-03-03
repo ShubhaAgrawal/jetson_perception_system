@@ -25,7 +25,8 @@ setup(
         ],
     },
     entry_points={
-        'console_scripts': ['camera_node = perception_pipeline.camera_node:main','viewer_node = perception_pipeline.viewer_node:main',
+        'console_scripts': ['camera_node = perception_pipeline.camera_node:main','viewer_node = perception_pipeline.viewer_node:main','detection_node = perception_pipeline.detection_node:main',
         ],
     },
 )
+

@@ -11,6 +11,12 @@ def generate_launch_description():
         ),
         Node(
             package='perception_pipeline',
+            executable='detection_node',
+            name='detection_node',
+            output='screen'
+        ),
+        Node(
+            package='perception_pipeline',
             executable='viewer_node',
             name='viewer_node',
             output='screen'
