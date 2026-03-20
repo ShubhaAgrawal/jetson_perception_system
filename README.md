@@ -59,7 +59,7 @@ detection_node (ROS2)
 
 - NVIDIA Jetson Orin Nano Super Developer Kit
 - USB Webcam (640x480 @ 30 FPS, MJPG)
-- OAK-D Lite (coming soon — for stereo depth)
+- OAK-D Lite (RGB + stereo depth, DepthAI v3.5.0)
 
 ## Software Stack
 
@@ -88,6 +88,9 @@ jetson_perception_system/
 │   └── msg/
 │       ├── Detection.msg         # Single detection (class, confidence, bbox)
 │       └── DetectionArray.msg    # Array of detections per frame
+├── tests/                        # Hardware bringup & integration tests
+│   ├── oak_rgb_test.py           # OAK-D Lite RGB streaming test
+│   └── oak_rgbd_test.py          # OAK-D Lite RGB + depth streaming test
 ├── models/
 │   └── yolov8n_fp16.engine       # TensorRT FP16 engine (not tracked in git)
 ├── benchmarks/
@@ -160,9 +163,10 @@ ros2 run perception_pipeline viewer_node
 - [x] ROS2 workspace and camera pipeline
 - [x] Custom detection messages (perception_msgs)
 - [x] YOLOv8n TensorRT FP16 detection node
+- [x] OAK-D Lite bringup and RGB+depth streaming
+- [ ] Depth alignment (RGB-depth fusion)
 - [ ] Multi-object tracking with persistent IDs
-- [ ] OAK-D Lite depth integration
-- [ ] 3D object localization (RGB + depth fusion)
+- [ ] 3D object localization
 - [ ] Occupancy grid generation
 - [ ] Real-time scheduling and WCET analysis
 - [ ] Power/thermal management and watchdog
