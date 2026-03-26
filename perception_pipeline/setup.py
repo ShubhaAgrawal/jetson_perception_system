@@ -25,7 +25,7 @@ setup(
         ],
     },
     entry_points={
-        'console_scripts': ['camera_node = perception_pipeline.camera_node:main','viewer_node = perception_pipeline.viewer_node:main','detection_node = perception_pipeline.detection_node:main','oakd_camera_node = perception_pipeline.oakd_camera_node:main',
+        'console_scripts': ['camera_node = perception_pipeline.camera_node:main','viewer_node = perception_pipeline.viewer_node:main','detection_node = perception_pipeline.detection_node:main','oakd_camera_node = perception_pipeline.oakd_camera_node:main','gpio_status_node = perception_pipeline.gpio_status_node:main',
         ],
     },
 )
